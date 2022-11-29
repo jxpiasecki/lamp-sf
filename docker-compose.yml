@@ -10,9 +10,10 @@ services:
       dockerfile: ./docker/server/Dockerfile
     container_name: '${APP_NAME}-server'
     ports:
+      #- 80:80
+      #- 443:443
       - '${APP_PORT}:80'
-      - 80:80
-      - 443:443
+      - '${APP_PORT_SECURE}:443'
     working_dir: /var/www/html
     environment:
       - 'DATABASE_URL=mysql://${MYSQL_USER}:${MYSQL_PASS}@db_server:3306/${MYSQL_DB}?serverVersion=10.5'

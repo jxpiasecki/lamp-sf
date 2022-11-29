@@ -1,1 +1,4 @@
-.idea
+!codebase/public/default.php
+!codebase/composer.phar
+/codebase/*
+/.idea
